@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="ja">
 <head>
 	<meta charset="UTF-8">	
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -43,48 +43,52 @@
 		
 		<div id="main">
 		
-			<h2>Contribute</h2>
+			<h2>貢献</h2>
 	
-			<h3 id="introduction">Introduction</h3>
+			<h3 id="introduction">導入</h3>
 			
 			<p>
-				Fuel is a community driven framework and is open for contributions from anyone who feels they
-				can improve it or add a feature that will bring the framework to a higher level. There
-				are multiple forms in which this can be achieved. From writing tutorials, writing and
-				releasing packages, to contributing to the official parts of Fuel (Core, Orm, Docs, etc..).
+				Fuelはコミュニティによってフレームワークを開発しています。<br>
+				フレームワークをより良いものにしたいと考える誰からの貢献に対してオープンです。<br>
+				
+				チュートリアルを書いたり、Fuelの公式部分に手を入れたり、これを達成する為にできることがいくつもあります。<br>
+				(Core本体、Orm , ドキュメント、その他色々)
+				
 			</p>
 			
-			<h3 id="fixing_bugs">Fixing Bugs</h3>
+			<h3 id="fixing_bugs">バグの修正</h3>
 			
 			<p>
-				When you encounter a bug or see one in the issues list that you can or have resolved,
-				and you want to contribute it back to the framework. Use GitHub to send a pull request.
-				Depending on which version you are running the branch you pull on. Follow the next couple
-				of steps to when you request a pull:
+				バグを発見した場合、またそのバグを修正したコードを提供したい場合はGithubへpull requestを送ってください。<br>
+				
+				どのバージョンなのかによって、ブランチが違うので、確認してください。<br>
+				それから、pull request したいステップを追ってください:
 			</p>
 			
 			<ul>
 				<li>
-					<strong>Is my current version still supported?</strong><br/>
-					If not, upgrade to a supported version and see if the bug is still exists.
+					<strong>バグが発生をした、そのFuelのバージョンは、まだサポートされているものですか？</strong><br/>
+					もしサポートされていないものなら、バージョンアップした後にバグが存在するか確認をしてください。
 				</li>
 				<li>
-					<strong>Checkout your version on your local repository</strong><br/>
+					<strong>チェックアウトしたあなたのローカルレポジトリのバージョンです。
+					</strong><br/>
 					<code class="cli">$ git checkout -b 1.1/develop origin/1.1/develop</code>
-					or
+					もしくは
 					<code class="cli">$ git checkout -b 1.0/develop origin/1.0/develop</code>
 				</li>
 				<li>
-					<strong>Fix the bug and commit it in your local repository</strong><br/>
-					Use a descriptive and understandable commit message
+					<strong>バグを修正して、あなたのローカルレポジトリにコミットしてください。
+					</strong><br/>
+					わかりやすいコミットメッセージをつけてください。
 					<code class="cli">$ git commit -m "This is my awesome description."</code>
 				</li>
 				<li>
-					<strong>Push it to your GitHub account</strong><br/>
+					<strong>それをあなたのGitHubアカウントへ、pushしてください。</strong><br/>
 					<code class="cli">$ git push</code>
 				</li>
 				<li>
-					<strong>Request the pull</strong><br/>
+					<strong>pull Requestを送信してください。</strong><br/>
 					Request the pull on the same branch as you are on (or you based your branch off).
 					A 1.0/develop branch request pulls on 1.0/develop, 1.1/develop on 1.1/develop and so on.
 					Use the "update commit range" interface to direct you request to the correct branch.
@@ -95,7 +99,7 @@
 				</li>
 			</ul>
 			
-			<h3 id="enhancements">Non-bug contributions</h3>
+			<h3 id="enhancements">バグ解決への貢献</h3>
 			
 			<p>
 				Non-bug contributions are new features, optimizations and all other alterations. All of these request must be made on the
