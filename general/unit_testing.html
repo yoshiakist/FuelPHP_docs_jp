@@ -125,7 +125,8 @@ OK (251 tests, 206 assertions)</code></pre>
 }</code></pre>
 
 			<p>
-				You can find further information about writing tests in the PHPUnit documentation at: <a href="http://www.phpunit.de/manual/current/en/writing-tests-for-phpunit.html">http://www.phpunit.de/manual/current/en/writing-tests-for-phpunit.html</a>.
+				テストを書く事についてのさらなる情報は、PHPUnitのドキュメントから見つける事ができます。<a href="http://www.phpunit.de/manual/current/ja/writing-tests-for-phpunit.html">http://www.phpunit.de/manual/current/ja/writing-tests-for-phpunit.html</a>
+				
 			</p>
 
 			<h3 id="test_groups">
@@ -133,15 +134,15 @@ OK (251 tests, 206 assertions)</code></pre>
 			</h3>
 
 			<p>
-				If you want to run only a subset of tests during development, you can use test groups.
+				あなたは、開発時のテストのサブセットのみを実行する場合, テストグループを使用することができます。
 				Run <code>php oil test</code> with the <code>--group=</code> command switch.
 			</p>
 
 			<pre class="cli"><code>$ php oil test --group=App</code></pre>
 
 			<p>
-				This command will run only the tests in the group 'App'.
-				You can assign a test class to one or more test groups with the docblock attribute @group.
+				このコマンドは、グループ'APP'のテストのみを実行します。
+				あなたのdocblock属性のグループを使用して1つまたは複数のテストグループにテストクラスを割り当てることができます。
 			</p>
 
 			<pre class="php"><code>/**
