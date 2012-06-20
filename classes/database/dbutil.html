@@ -247,7 +247,7 @@ catch(\Database_Exception $e)
 
 			<article>
 				<h4 class="method" id="method_table_exists">table_exists($table, $db = null)</h4>
-				<p><strong>table_exists</strong> メソッドは、テーブルが存在するか確かめます。</p>
+				<p><strong>table_exists</strong> メソッドは、引数で指定したテーブルが存在するか確かめます。</p>
 				<table class="method">
 					<tbody>
 						<tr>
@@ -446,7 +446,7 @@ catch(\Database_Exception $e)
 									<tr>
 										<th><kbd>$fields</kbd></th>
 										<td><em>必須</em></td>
-										<td>フィールドを含む配列</td>
+										<td>フィールド名を含む配列</td>
 									</tr>
 									<tr>
 										<th><kbd>$primary_keys</kbd></th>
@@ -607,7 +607,7 @@ CREATE TABLE `users` (
 
 			<article>
 				<h4 class="method" id="method_field_exists">field_exists($table, $columns, $db = null)</h4>
-				<p>The <strong>field_exists</strong> method checks if given field(s) in a given table exists.</p>
+				<p><strong>field_exists</strong> メソッドは、引数で指定したテーブルに引数で指定したフィールドが存在するか確かめます。</p>
 				<table class="method">
 					<tbody>
 						<tr>
@@ -625,25 +625,25 @@ CREATE TABLE `users` (
 									</tr>
 									<tr>
 										<td>$table</td>
-										<td>required</td>
-										<td>the table name</td>
+										<td>必須</td>
+										<td>テーブル名</td>
 									</tr>
 									<tr>
 										<td>$columns</td>
-										<td>required</td>
-										<td>array containing fields</td>
+										<td>必須</td>
+										<td>フィールド名を含む配列</td>
 									</tr>
 									<tr>
 										<th><kbd>$db</kbd></th>
 										<td><pre class="php"><code>null</code></pre></td>
-										<td class="description">The database connection.</td>
+										<td class="description">データベース接続</td>
 									</tr>
 								</table>
 							</td>
 						</tr>
 						<tr>
 							<th>返り値</th>
-							<td>返り値 true if field/column exists, false otherwise</td>
+							<td>フィールド／カラムが存在すれば true、存在しなければ false</td>
 						</tr>
 						<tr>
 							<th>例</th>
@@ -651,11 +651,11 @@ CREATE TABLE `users` (
 								<pre class="php"><code>
 if(DBUtil::field_exists('my_table', array('my_field_or_column')))
 {
-	// Fields exist
+	// フィールドが存在する
 }
 else
 {
-	// Fields are not available on the table
+	// テーブルにフィールドが存在しない
 }</code>
 								</pre>
 							</td>
@@ -666,7 +666,7 @@ else
 
 			<article>
 				<h4 class="method" id="method_add_fields">add_fields($table, $fields, $db = null)</h4>
-				<p>The <strong>add_fields</strong> method adds fields to a table.</p>
+				<p><strong>add_fields</strong> メソッドは、テーブルにフィールドを追加します。</p>
 				<table class="method">
 					<tbody>
 						<tr>
@@ -685,17 +685,17 @@ else
 									<tr>
 										<th><kbd>$table</kbd></th>
 										<td><em>必須</em></td>
-										<td>the table name</td>
+										<td>テーブル名</td>
 									</tr>
 									<tr>
 										<th><kbd>$fields</kbd></th>
 										<td><em>必須</em></td>
-										<td>array containing fields</td>
+										<td>フィールド名を含む配列</td>
 									</tr>
 									<tr>
 										<th><kbd>$db</kbd></th>
 										<td><pre class="php"><code>null</code></pre></td>
-										<td class="description">The database connection.</td>
+										<td class="description">データベース接続</td>
 									</tr>
 								</table>
 							</td>
@@ -706,7 +706,7 @@ else
 						</tr>
 						<tr>
 							<th>例外</th>
-							<td>\Database_Exception on failure</td>
+							<td>失敗時に \Database_Exception</td>
 						</tr>
 						<tr>
 							<th>例</th>
@@ -724,7 +724,7 @@ else
 
 			<article>
 				<h4 class="method" id="method_drop_fields">drop_fields($table, $fields, $db = null)</h4>
-				<p>The <strong>drop_fields</strong> method drops fields from a table.</p>
+				<p><strong>drop_fields</strong> メソッドは、テーブルからフィールドを削除します。</p>
 				<table class="method">
 					<tbody>
 						<tr>
@@ -743,17 +743,17 @@ else
 									<tr>
 										<th><kbd>$table</kbd></th>
 										<td><em>必須</em></td>
-										<td>string of the table name</td>
+										<td>テーブル名</td>
 									</tr>
 									<tr>
 										<th><kbd>$fields</kbd></th>
 										<td><em>必須</em></td>
-										<td>string or array containing fields</td>
+										<td>フィールド名を含む文字列または配列string or フィールド名を含む配列</td>
 									</tr>
 									<tr>
 										<th><kbd>$db</kbd></th>
 										<td><pre class="php"><code>null</code></pre></td>
-										<td class="description">The database connection.</td>
+										<td class="description">データベース接続</td>
 									</tr>
 								</table>
 							</td>
@@ -764,7 +764,7 @@ else
 						</tr>
 						<tr>
 							<th>例外</th>
-							<td>\Database_Exception on failure</td>
+							<td>失敗時に \Database_Exception</td>
 						</tr>
 						<tr>
 							<th>例</th>
@@ -778,7 +778,7 @@ else
 
 			<article>
 				<h4 class="method" id="method_modify_fields">modify_fields($table, $fields, $db = null)</h4>
-				<p>The <strong>modify_fields</strong> method alters fields in a table.</p>
+				<p><strong>modify_fields</strong> メソッドは、テーブルのフィールドを変更します。</p>
 				<table class="method">
 					<tbody>
 						<tr>
@@ -797,17 +797,17 @@ else
 									<tr>
 										<th><kbd>$table</kbd></th>
 										<td><em>必須</em></td>
-										<td>the table name</td>
+										<td>テーブル名</td>
 									</tr>
 									<tr>
 										<th><kbd>$fields</kbd></th>
 										<td><em>必須</em></td>
-										<td>array containing fields</td>
+										<td>フィールド名を含む配列</td>
 									</tr>
 									<tr>
 										<th><kbd>$db</kbd></th>
 										<td><pre class="php"><code>null</code></pre></td>
-										<td class="description">The database connection.</td>
+										<td class="description">データベース接続</td>
 									</tr>
 								</table>
 							</td>
@@ -818,7 +818,7 @@ else
 						</tr>
 						<tr>
 							<th>例外</th>
-							<td>\Database_Exception on failure</td>
+							<td>失敗時に \Database_Exception</td>
 						</tr>
 						<tr>
 							<th>例</th>
@@ -836,7 +836,7 @@ else
 
 			<article>
 				<h4 class="method" id="method_create_index">create_index($table, $index_columns, $index_name, $index = '', $db = null)</h4>
-				<p>The <strong>create_index</strong> method allows you to create secondary indexes on a table.</p>
+				<p><strong>create_index</strong> メソッドは、テーブルに二次インデックスを作成します。</p>
 				<table class="method">
 					<tbody>
 						<tr>
@@ -855,50 +855,50 @@ else
 									<tr>
 										<th><kbd>$table</kbd></th>
 										<td><em>必須</em></td>
-										<td>the table name</td>
+										<td>テーブル名</td>
 									</tr>
 									<tr>
 										<th><kbd>$index_columns</kbd></th>
 										<td><em>必須</em></td>
-										<td>mixed, string or array of strings containing fields</td>
+										<td>mixed (フィールド名を含む文字列または配列)</td>
 									</tr>
 									<tr>
 										<th><kbd>$index_name</kbd></th>
-										<td><em>optional</em></td>
-										<td>name of the index to be created</td>
+										<td><em>オプション</em></td>
+										<td>作成するインデックス名</td>
 									</tr>
 									<tr>
 										<th><kbd>$index</kbd></th>
-										<td><em>optional</em></td>
-										<td>type of index to be created.<br />Currently supported: UNIQUE, FULLTEXT, SPATIAL, NONCLUSTERED</td>
+										<td><em>オプション</em></td>
+										<td>作成するインデックスタイプ。<br />現在サポートされているもの: UNIQUE, FULLTEXT, SPATIAL, NONCLUSTERED</td>
 									</tr>
 									<tr>
 										<th><kbd>$db</kbd></th>
 										<td><pre class="php"><code>null</code></pre></td>
-										<td class="description">The database connection.</td>
+										<td class="description">データベース接続</td>
 									</tr>
 								</table>
 							</td>
 						</tr>
 						<tr>
 							<th>返り値</th>
-							<td>返り値 the result of the database operation.</td>
+							<td>データベース操作の結果</td>
 						</tr>
 						<tr>
 							<th>例外</th>
-							<td>\Database_Exception on failure</td>
+							<td>失敗時に \Database_Exception</td>
 						</tr>
 						<tr>
 							<th>例</th>
 							<td>
 								<pre class="php"><code>\DBUtil::create_index('table', 'name');
-// produces CREATE INDEX name ON table ( `name` )
+// 生成される構文 CREATE INDEX name ON table ( `name` )
 
 \DBUtil::create_index('table', array('nameA', 'nameB'), 'name');
-// produces CREATE INDEX name ON table ( `nameA`, `nameB` )
+// 生成される構文 CREATE INDEX name ON table ( `nameA`, `nameB` )
 
 \DBUtil::create_index('table', array('nameA' => 'ASC', 'nameB'), 'name', 'fulltext');
-// produces CREATE FULLTEXT INDEX name ON table ( `nameA` ASC, `nameB` )
+// 生成される構文 CREATE FULLTEXT INDEX name ON table ( `nameA` ASC, `nameB` )
 </code></pre>
 							</td>
 						</tr>
@@ -908,7 +908,7 @@ else
 
 			<article>
 				<h4 class="method" id="method_drop_index">drop_index($table, $index_name, $db = null)</h4>
-				<p>The <strong>drop_index</strong> method allows you to drop a secondary index from a table.</p>
+				<p><strong>drop_index</strong> メソッドは、テーブルから二次インデックスを削除します。</p>
 				<table class="method">
 					<tbody>
 						<tr>
@@ -927,34 +927,34 @@ else
 									<tr>
 										<th><kbd>$table</kbd></th>
 										<td><em>必須</em></td>
-										<td>the table name</td>
+										<td>テーブル名</td>
 									</tr>
 									<tr>
 										<th><kbd>$index_name</kbd></th>
 										<td><em>必須</em></td>
-										<td>name of the index to be dropped</td>
+										<td>削除するインデックス名</td>
 									</tr>
 									<tr>
 										<th><kbd>$db</kbd></th>
 										<td><pre class="php"><code>null</code></pre></td>
-										<td class="description">The database connection.</td>
+										<td class="description">データベース接続</td>
 									</tr>
 								</table>
 							</td>
 						</tr>
 						<tr>
 							<th>返り値</th>
-							<td>返り値 the result of the database operation.</td>
+							<td>データベース操作の結果</td>
 						</tr>
 						<tr>
 							<th>例外</th>
-							<td>\Database_Exception on failure</td>
+							<td>失敗時に \Database_Exception</td>
 						</tr>
 						<tr>
 							<th>例</th>
 							<td>
 								<pre class="php"><code>\DBUtil::drop_index('table', 'name');
-// produces DROP INDEX name ON table
+// 生成される構文 DROP INDEX name ON table
 </code></pre>
 							</td>
 						</tr>
@@ -964,7 +964,7 @@ else
 			
 			<article>
 				<h4 class="method" id="method_add_foregin_key">add_foregin_key($table, $foreign_key)</h4>
-				<p>The <strong>add_foreign_key</strong> method allows you to add a foreign key to a table after it's creation.</p>
+				<p><strong>add_foreign_key</strong> メソッドは、テーブル作成後に、外部キーを追加します。</p>
 				<table class="method">
 					<tbody>
 						<tr>
@@ -983,23 +983,23 @@ else
 									<tr>
 										<th><kbd>$table</kbd></th>
 										<td><em>必須</em></td>
-										<td>the table name</td>
+										<td>テーブル名</td>
 									</tr>
 									<tr>
 										<th><kbd>$foreign_key</kbd></th>
 										<td><em>必須</em></td>
-										<td>array containing the foreign key definition.</td>
+										<td>外部キー定義を含む配列</td>
 									</tr>
 								</table>
 							</td>
 						</tr>
 						<tr>
 							<th>返り値</th>
-							<td>返り値 the result of the database operation.</td>
+							<td>データベース操作の結果</td>
 						</tr>
 						<tr>
 							<th>例外</th>
-							<td>\InvalidArgumentException on invalid input, \Database_Exception on failure</td>
+							<td>\InvalidArgumentException on invalid input, 失敗時に \Database_Exception</td>
 						</tr>
 						<tr>
 							<th>例</th>
@@ -1022,7 +1022,7 @@ else
 			
 			<article>
 				<h4 class="method" id="method_drop_foreign_key">drop_foreign_key($table, $fk_name)</h4>
-				<p>The <strong>drop_foreign_key</strong> method allows you to drop a foreign key from a table.</p>
+				<p><strong>drop_foreign_key</strong> メソッドは、テーブルから外部キーを削除します。</p>
 				<table class="method">
 					<tbody>
 						<tr>
@@ -1041,29 +1041,29 @@ else
 									<tr>
 										<th><kbd>$table</kbd></th>
 										<td><em>必須</em></td>
-										<td>the table name</td>
+										<td>テーブル名</td>
 									</tr>
 									<tr>
 										<th><kbd>$fk_name</kbd></th>
 										<td><em>必須</em></td>
-										<td>name of the foreign key to be dropped</td>
+										<td>削除する外部キー名</td>
 									</tr>
 								</table>
 							</td>
 						</tr>
 						<tr>
 							<th>返り値</th>
-							<td>返り値 the result of the database operation.</td>
+							<td>データベース操作の結果</td>
 						</tr>
 						<tr>
 							<th>例外</th>
-							<td>\Database_Exception on failure</td>
+							<td>失敗時に \Database_Exception</td>
 						</tr>
 						<tr>
 							<th>例</th>
 							<td>
 								<pre class="php"><code>\DBUtil::drop_foreign_key('table', 'name');
-// produces ALTER TABLE `table` DROP FOREIGN KEY name
+// 生成される構文 ALTER TABLE `table` DROP FOREIGN KEY name
 </code></pre>
 							</td>
 						</tr>
@@ -1075,7 +1075,7 @@ else
 
 			<article>
 				<h4 class="method" id="method_truncate_table">truncate_table($table, $db = null)</h4>
-				<p>The <strong>truncate_table</strong> method truncates a table.</p>
+				<p><strong>truncate_table</strong> メソッドは、テーブルを切りつめます。</p>
 				<table class="method">
 					<tbody>
 						<tr>
@@ -1094,12 +1094,12 @@ else
 									<tr>
 										<th><kbd>$table</kbd></th>
 										<td><em>必須</em></td>
-										<td class="description">the table name.</td>
+										<td class="description">テーブル名.</td>
 									</tr>
 									<tr>
 										<th><kbd>$db</kbd></th>
 										<td><pre class="php"><code>null</code></pre></td>
-										<td class="description">The database connection.</td>
+										<td class="description">データベース接続</td>
 									</tr>
 								</table>
 							</td>
@@ -1110,7 +1110,7 @@ else
 						</tr>
 						<tr>
 							<th>例外</th>
-							<td>\Database_Exception when not supported</td>
+							<td>サポートされていないとき \Database_Exception</td>
 						</tr>
 						<tr>
 							<th>例</th>
@@ -1124,7 +1124,7 @@ else
 
 			<article>
 				<h4 class="method" id="method_analyze_table">analyze_table($table, $db = null)</h4>
-				<p>The <strong>analyze_table</strong> method analyzes a table.</p>
+				<p><strong>analyze_table</strong> メソッドは、テーブルを分析します。</p>
 				<table class="method">
 					<tbody>
 						<tr>
@@ -1143,26 +1143,26 @@ else
 									<tr>
 										<th><kbd>$table</kbd></th>
 										<td><em>必須</em></td>
-										<td class="description">the table name.</td>
+										<td class="description">テーブル名.</td>
 									</tr>
 									<tr>
 										<th><kbd>$db</kbd></th>
 										<td><pre class="php"><code>null</code></pre></td>
-										<td class="description">The database connection.</td>
+										<td class="description">データベース接続</td>
 									</tr>
 								</table>
 							</td>
 						</tr>
 						<tr>
 							<th>返り値</th>
-							<td><em>True</em> if the table is OK. <em>False</em> when needs attention. If not supported it logs the error message.</td>
+							<td>テーブルが OK なら <em>True</em>。注意が必要なら <em>False</em>。サポートされていなければ、エラーメッセージをログに記録する。</td>
 						</tr>
 						<tr>
 							<th>例</th>
 							<td>
 								<pre class="php"><code>if(\DBUtil::analyze_table('table_name') === false)
 {
-	// Do something
+	// 何か処理を行う
 }
 </code></pre>
 							</td>
@@ -1173,7 +1173,7 @@ else
 
 			<article>
 				<h4 class="method" id="method_check_table">check_table($table, $db = null)</h4>
-				<p>The <strong>check_table</strong> method checks a table.</p>
+				<p><strong>check_table</strong> メソッドは、テーブルをチェックします。</p>
 				<table class="method">
 					<tbody>
 						<tr>
@@ -1192,19 +1192,19 @@ else
 									<tr>
 										<th><kbd>$table</kbd></th>
 										<td><em>必須</em></td>
-										<td class="description">the table name.</td>
+										<td class="description">テーブル名.</td>
 									</tr>
 									<tr>
 										<th><kbd>$db</kbd></th>
 										<td><pre class="php"><code>null</code></pre></td>
-										<td class="description">The database connection.</td>
+										<td class="description">データベース接続</td>
 									</tr>
 								</table>
 							</td>
 						</tr>
 						<tr>
 							<th>返り値</th>
-							<td><em>True</em> if the table is OK. <em>False</em> when needs attention. If not supported it logs the error message.</td>
+							<td>テーブルが OK なら <em>True</em>。注意が必要なら <em>False</em>。サポートされていなければ、エラーメッセージをログに記録する。</td>
 						</tr>
 						<tr>
 							<th>例</th>
@@ -1241,12 +1241,12 @@ else
 									<tr>
 										<th><kbd>$table</kbd></th>
 										<td><em>必須</em></td>
-										<td class="description">the table name.</td>
+										<td class="description">テーブル名.</td>
 									</tr>
 									<tr>
 										<th><kbd>$db</kbd></th>
 										<td><pre class="php"><code>null</code></pre></td>
-										<td class="description">The database connection.</td>
+										<td class="description">データベース接続</td>
 									</tr>
 								</table>
 							</td>
@@ -1260,7 +1260,7 @@ else
 							<td>
 								<pre class="php"><code>if(\DBUtil::optimize_table('table_name') === false)
 {
-	// Do something
+	// 何か処理を行う
 }
 </code></pre>
 							</td>
@@ -1271,7 +1271,7 @@ else
 
 			<article>
 				<h4 class="method" id="method_repair_table">repair_table($table, $db = null)</h4>
-				<p>The <strong>repair_table</strong> method repairs a table.</p>
+				<p><strong>repair_table</strong> メソッドは、テーブルを修復します。</p>
 				<table class="method">
 					<tbody>
 						<tr>
@@ -1290,26 +1290,26 @@ else
 									<tr>
 										<th><kbd>$table</kbd></th>
 										<td><em>必須</em></td>
-										<td class="description">the table name.</td>
+										<td class="description">テーブル名.</td>
 									</tr>
 									<tr>
 										<th><kbd>$db</kbd></th>
 										<td><pre class="php"><code>null</code></pre></td>
-										<td class="description">The database connection.</td>
+										<td class="description">データベース接続</td>
 									</tr>
 								</table>
 							</td>
 						</tr>
 						<tr>
 							<th>返り値</th>
-							<td><em>True</em> if the table is OK or repaired. <em>false</em> on failure. If not supported or failed it logs the error message.</td>
+							<td>テーブルが OK または修復された場合 <em>True</em>。失敗した場合 <em>false</em>。サポートされていない場合、失敗した場合はエラーメッセージをログに記録する。</td>
 						</tr>
 						<tr>
 							<th>例</th>
 							<td>
 								<pre class="php"><code>if(\DBUtil::repair_table('table_name') === false)
 {
-	// Do something
+	// 何か処理を行う
 }
 </code></pre>
 							</td>
