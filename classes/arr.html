@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="ja">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -47,11 +47,11 @@
 
 			<h2>Arr クラス</h2>
 
-			<p>The arr class is a set of helper functions for working with arrays.</p>
+			<p>arrのクラスは、配列を使用するためのヘルパー関数のセットです。</p>
 
 			<article>
 				<h4 class="method" id="method_is_multi">is_multi($arr, $all_keys = false)</h4>
-				<p>The <strong>is_multi</strong> method checks if the array passed is multi-dimensional array or not.</p>
+				<p>渡される配列が多次元配列であるかどうか<strong>is_multi</strong>メソッドは、チェックします。</p>
 				<table class="method">
 					<tbody>
 					<tr>
@@ -89,7 +89,7 @@
 					<tr>
 						<th>例</th>
 						<td>
-							<pre class="php"><code>// Single array
+							<pre class="php"><code>// 単一の配列
 $arr = array('one' => 1, 'two' => 2);
 echo Arr::is_multi($arr);
 // Result: false
@@ -113,7 +113,7 @@ echo Arr::is_multi($arr, true);  // Result: false
 
 			<article>
 				<h4 class="method" id="method_is_assoc">is_assoc($arr)</h4>
-				<p>The <strong>is_assoc</strong> method checks if the array passed is an associative array or not.</p>
+				<p>配列が渡された場合<strong>is_assoc</strong>メソッドは連想配列であるかのチェックをします。</p>
 				<table class="method">
 					<tbody>
 					<tr>
@@ -153,8 +153,8 @@ echo Arr::is_assoc($arr);
 // Result: true
 
 /*
- * Note that even if the '2' is defined as a string, PHP will store this internally
- * as an integer, and therefore this is NOT seen as an assoc array!
+ * '2'が文字列として定義されている場合でも、PHPは整数として内部的にこれを保存することに注意してください。
+ * したがってこれは連想配列として認識されません！
  */
 $arr = array(0 => 'foo', 1 => 'bar', '2' => 'baz', 3 => 'yay');
 echo Arr::is_assoc($arr);
